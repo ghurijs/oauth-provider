@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased (0.1.0-alpha.0)
+## 0.1.0-alpha.0
 
 - Initial alpha: an OAuth 2.1 authorization server in the style of django-oauth-toolkit (app label
   `oauth2_provider`, `OAUTH2_PROVIDER` settings, `oauth2_provider_*` tables), built for remote MCP servers
