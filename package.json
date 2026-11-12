@@ -1,0 +1,60 @@
+{
+  "name": "@ghuri/oauth-provider",
+  "version": "0.1.0-alpha.0",
+  "description": "Ghuri OAuth provider: an OAuth 2.1 authorization server (django-oauth-toolkit style) with PKCE, refresh rotation, Client ID Metadata Documents and dynamic registration, for MCP servers and APIs on Workers and Node",
+  "type": "module",
+  "license": "MIT",
+  "author": "Ghuri contributors",
+  "homepage": "https://github.com/ghurijs/oauth-provider#readme",
+  "repository": { "type": "git", "url": "git+https://github.com/ghurijs/oauth-provider.git" },
+  "bugs": { "url": "https://github.com/ghurijs/oauth-provider/issues" },
+  "keywords": ["ghuri", "django", "oauth", "oauth2", "oauth2.1", "authorization-server", "pkce", "mcp", "cloudflare", "workers", "hono"],
+  "exports": {
+    ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" },
+    "./admin": { "types": "./dist/admin.d.ts", "import": "./dist/admin.js" },
+    "./rest": { "types": "./dist/rest.d.ts", "import": "./dist/rest.js" }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": ["dist", "README.md", "LICENSE"],
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "lint": "biome check src test",
+    "format": "biome format --write src test"
+  },
+  "peerDependencies": {
+    "@ghuri/admin": "^0.1.0-alpha.0",
+    "@ghuri/auth": "^0.1.0-alpha.4",
+    "@ghuri/core": "^0.1.0-alpha.3",
+    "@ghuri/oauth": "^0.1.0-alpha.0",
+    "@ghuri/orm": "^0.1.0-alpha.4",
+    "@ghuri/rest": "^0.1.0-alpha.2",
+    "hono": "^4.13.0"
+  },
+  "peerDependenciesMeta": { "@ghuri/admin": { "optional": true }, "@ghuri/rest": { "optional": true } },
+  "devDependencies": {
+    "@biomejs/biome": "^2.6.6",
+    "@electric-sql/pglite": "^0.5.16",
+    "@ghuri/admin": "^0.1.0-alpha.0",
+    "@ghuri/auth": "^0.1.0-alpha.4",
+    "@ghuri/core": "^0.1.0-alpha.3",
+    "@ghuri/oauth": "^0.1.0-alpha.0",
+    "@ghuri/orm": "^0.1.0-alpha.4",
+    "@ghuri/rest": "^0.1.0-alpha.2",
+    "@types/node": "^24.0.0",
+    "better-sqlite3": "^13.1.1",
+    "drizzle-orm": "^0.45.4",
+    "esbuild": "^0.27.7",
+    "hono": "^4.13.0",
+    "miniflare": "^4.20260730.0",
+    "tsup": "^8.5.1",
+    "typescript": "~5.9.3",
+    "vitest": "^5.1.0"
+  },
+  "publishConfig": { "access": "public", "tag": "next" }
+}
